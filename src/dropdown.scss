@@ -6,7 +6,6 @@
 @include b(dropdown) {
   display: inline-block;
   position: relative;
-  color: $--color-text-regular;
   font-size: $--font-size-base;
 
   .el-button-group {
@@ -69,6 +68,8 @@
   border: 1px solid $--border-color-lighter;
   border-radius: $--border-radius-base;
   box-shadow: $--dropdown-menu-box-shadow;
+  max-height: 400px;
+  overflow: auto;
 
   @include e(item) {
     list-style: none;

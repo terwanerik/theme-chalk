@@ -32,13 +32,14 @@
 
 @mixin button-variant($color, $background-color, $border-color) {
   color: $color;
-  background-color: $background-color;
+  background: linear-gradient(to bottom, mix($--color-white, $background-color, $--button-hover-tint-percent), $background-color);
   border-color: $border-color;
+  transition: opacity 0.25s ease;
 
   &:hover,
   &:focus {
-    background: mix($--color-white, $background-color, $--button-hover-tint-percent);
-    border-color: mix($--color-white, $border-color, $--button-hover-tint-percent);
+    opacity: 0.8;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     color: $color;
   }
   

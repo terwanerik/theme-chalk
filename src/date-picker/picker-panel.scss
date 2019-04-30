@@ -45,7 +45,7 @@
     cursor: pointer;
 
     &:hover {
-      color: $--datepicker-hover-font-color;
+      color: $--datepicker-text-hover-color;
     }
 
     &.active {
@@ -81,7 +81,7 @@
     margin-top: 8px;
 
     &:hover {
-      color: $--datepicker-hover-font-color;
+      color: $--datepicker-text-hover-color;
     }
 
     @include when(disabled) {

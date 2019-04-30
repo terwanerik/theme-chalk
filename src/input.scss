@@ -2,7 +2,6 @@
 @import "common/var";
 
 @include b(textarea) {
-  position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: bottom;
@@ -11,17 +10,19 @@
   @include e(inner) {
     display: block;
     resize: vertical;
-    padding: 5px 15px;
+    padding: 15px;
     line-height: 1.5;
     box-sizing: border-box;
     width: 100%;
     font-size: inherit;
+    font-family: inherit;
     color: $--input-font-color;
     background-color: $--input-background-color;
     background-image: none;
     border: $--input-border;
     border-radius: $--input-border-radius;
-    transition: $--border-transition-base;
+    box-shadow: $--input-box-shadow;
+    transition: $--all-transition;
 
     &::placeholder {
       color: $--input-placeholder-color;
@@ -29,21 +30,14 @@
 
     &:hover {
       border-color: $--input-hover-border;
+      box-shadow: $--input-hover-box-shadow;
     }
 
     &:focus {
       outline: none;
       border-color: $--input-focus-border;
+      box-shadow: $--input-focus-box-shadow;
     }
-  }
-
-  & .el-input__count {
-    color: $--color-info;
-    background: $--color-white;
-    position: absolute;
-    font-size: 12px;
-    bottom: 5px;
-    right: 10px;
   }
 
   @include when(disabled) {
@@ -56,16 +50,6 @@
       &::placeholder {
         color: $--input-disabled-placeholder-color;
       }
-    }
-  }
-
-  @include when(exceed) {
-    .el-textarea__inner {
-      border-color: $--color-danger;
-    }
-
-    .el-input__count {
-      color: $--color-danger;
     }
   }
 }
@@ -89,20 +73,6 @@
     }
   }
 
-  & .el-input__count {
-    height: 100%;
-    display: inline-flex;
-    align-items: center;
-    color: $--color-info;
-    font-size: 12px;
-
-    .el-input__count-inner {
-      background: $--color-white;
-      display: inline-block;
-      padding: 0 5px;
-    }
-  }
-
   @include e(inner) {
     -webkit-appearance: none;
     background-color: $--input-background-color;
@@ -110,14 +80,15 @@
     border-radius: $--input-border-radius;
     border: $--input-border;
     box-sizing: border-box;
+    box-shadow: $--input-box-shadow;
     color: $--input-font-color;
     display: inline-block;
     font-size: inherit;
+    font-family: inherit;
     height: $--input-height;
-    line-height: $--input-height;
     outline: none;
     padding: 0 15px;
-    transition: $--border-transition-base;
+    transition: $--all-transition;
     width: 100%;
 
     &::placeholder {
@@ -126,11 +97,13 @@
 
     &:hover {
       border-color: $--input-hover-border;
+      box-shadow: $--input-hover-box-shadow;
     }
 
     &:focus {
       outline: none;
       border-color: $--input-focus-border;
+      box-shadow: $--input-focus-box-shadow;
     }
   }
 
@@ -152,8 +125,12 @@
   @include e(prefix) {
     position: absolute;
     height: 100%;
-    left: 5px;
+    width: 44px;
+    left: 0;
     top: 0;
+    background: $--input-prefix-background;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
     text-align: center;
     color: $--input-icon-color;
     transition: all .3s;
@@ -165,6 +142,7 @@
     text-align: center;
     transition: all .3s;
     line-height: $--input-height;
+    padding-left: 5px;
 
     &:after {
       content: '';
@@ -183,6 +161,7 @@
     .el-input__inner {
       outline: none;
       border-color: $--input-focus-border;
+      box-shadow: $--input-focus-box-shadow;
     }
   }
 
@@ -203,18 +182,6 @@
     }
   }
 
-  @include when(exceed) {
-    .el-input__inner {
-      border-color: $--color-danger;
-    }
-
-    .el-input__suffix {
-      .el-input__count {
-        color: $--color-danger;
-      }
-    }
-  }
-
   @include m(suffix) {
     .el-input__inner {
       padding-right: 30px;
@@ -223,7 +190,7 @@
 
   @include m(prefix) {
     .el-input__inner {
-      padding-left: 30px;
+      padding-left: 59px;
     }
   }
 
@@ -232,7 +199,6 @@
 
     @include e(inner) {
       height: $--input-medium-height;
-      line-height: $--input-medium-height;
     }
 
     .el-input__icon {
@@ -263,6 +229,32 @@
       line-height: $--input-mini-height;
     }
   }
+}
+
+.el-form-item.is-success .el-input:not(.el-input--prefix) .el-input__inner,
+.el-form-item.is-success .el-textarea .el-textarea__inner {
+  box-shadow: $--input-success-box-shadow;
+}
+
+.el-form-item .el-input.el-input--prefix .el-input__prefix {
+  background: $--input-form-prefix-background;
+}
+
+.el-form-item.is-success .el-input.el-input--prefix .el-input__prefix {
+  background: $--input-form-success-prefix-background;
+}
+
+.el-form-item .el-input.el-input--prefix .el-input__inner:focus + .el-input__prefix {
+  background: $--input-prefix-background;
+}
+
+.el-form-item.is-error .el-input:not(.el-input--prefix) .el-input__inner,
+.el-form-item.is-error .el-textarea .el-textarea__inner {
+  box-shadow: $--input-error-box-shadow;
+}
+
+.el-form-item.is-error .el-input.el-input--prefix .el-input__prefix {
+  background: $--input-form-error-prefix-background;
 }
 
 @include b(input-group) {

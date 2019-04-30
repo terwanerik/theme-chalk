@@ -3,19 +3,34 @@
 @import "common/var";
 
 @include b(form) {
-  @include m(label-left) {
-    & .el-form-item__label {
-      text-align: left;
-    }
+  //@include m(label-left) {
+  //  & .el-form-item__label {
+  //    text-align: left;
+  //  }
+  //}
+
+  & .el-form-item__label {
+    float: none;
+    display: inline-block;
+    padding: 3px 10px 30px 3px;
+    margin-bottom: -27px;
+
+    text-align: left;
   }
-  @include m(label-top) {
-    & .el-form-item__label {
-      float: none;
-      display: inline-block;
-      text-align: left;
-      padding: 0 0 10px 0;
-    }
-  }
+
+  //@include m(label-top) {
+  //  & .el-form-item__label {
+  //    float: none;
+  //    display: inline-block;
+  //    padding: 3px 10px 30px 10px;
+  //    border-top-left-radius: 5px;
+  //    border-top-right-radius: 5px;
+  //    margin-bottom: -27px;
+  //
+  //    text-align: left;
+  //    background: rgba(255,255,255,0.6);
+  //  }
+  //}
   @include m(inline) {
     & .el-form-item {
       display: inline-block;
@@ -36,7 +51,7 @@
   }
 }
 @include b(form-item) {
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   @include utils-clearfix;
 
   & .el-form-item {
@@ -49,18 +64,18 @@
 
   @include m(medium) {
     .el-form-item__label {
-      line-height: 36px;
+      line-height: 26px;
     }
     .el-form-item__content {
-      line-height: 36px;
+      line-height: 26px;
     }
   }
   @include m(small) {
     .el-form-item__label {
-      line-height: 32px;
+      line-height: 26px;
     }
     .el-form-item__content {
-      line-height: 32px;
+      line-height: 26px;
     }
     &.el-form-item {
       margin-bottom: 18px;
@@ -71,10 +86,10 @@
   }
   @include m(mini) {
     .el-form-item__label {
-      line-height: 28px;
+      line-height: 24px;
     }
     .el-form-item__content {
-      line-height: 28px;
+      line-height: 24px;
     }
     &.el-form-item {
       margin-bottom: 18px;
@@ -84,22 +99,15 @@
     }
   }
 
-  @include e(label-wrap) {
-    float: left;
-    .el-form-item__label {
-      display: inline-block;
-      float: none;
-    }
-  }
-
   @include e(label) {
     text-align: right;
     vertical-align: middle;
     float: left;
     font-size: 14px;
+    font-weight: 600;
     color: $--color-text-regular;
-    line-height: 40px;
-    padding: 0 12px 0 0;
+    line-height: normal;
+    padding: 0 12px 7px 16px;
     box-sizing: border-box;
   }
   @include e(content) {
@@ -118,8 +126,8 @@
     line-height: 1;
     padding-top: 4px;
     position: absolute;
-    top: 100%;
-    left: 0;
+    bottom: -20px;
+    left: 16px;
 
     @include m(inline) {
       position: relative;
@@ -130,16 +138,15 @@
     }
   }
 
-  @include when(required) {
-    @include pseudo('not(.is-no-asterisk)') {
-      & > .el-form-item__label:before,
-      & .el-form-item__label-wrap > .el-form-item__label:before {
-        content: '*';
-        color: $--color-danger;
-        margin-right: 4px;
-      }
-    }
-  }
+  //@include when(required) {
+  //  @include pseudo('not(.is-no-asterisk)') {
+  //    & > .el-form-item__label:before {
+  //      content: '*';
+  //      color: $--color-danger;
+  //      margin-right: 4px;
+  //    }
+  //  }
+  //}
 
   @include when(error) {
     & .el-input__inner,

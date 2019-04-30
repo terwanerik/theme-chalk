@@ -11,6 +11,7 @@
   cursor: pointer;
   background: $--button-default-background-color;
   border: $--border-base;
+  border-width: 0;
   border-color: $--button-default-border-color;
   color: $--button-default-font-color;
   -webkit-appearance: none;

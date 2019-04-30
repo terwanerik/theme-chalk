@@ -44,14 +44,14 @@
       margin: 0 auto;
       border-radius: 18px;
       &:hover {
-        color: $--datepicker-hover-font-color;
+        color: $--datepicker-text-hover-color;
       }
     }
 
     &.in-range div {
-      background-color: $--datepicker-inrange-background-color;
+      background-color: $--datepicker-inrange-color;
       &:hover {
-        background-color: $--datepicker-inrange-hover-background-color;
+        background-color: $--datepicker-inrange-hover-color;
       }
     }
     &.start-date div,

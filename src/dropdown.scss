@@ -6,7 +6,6 @@
 @include b(dropdown) {
   display: inline-block;
   position: relative;
-  color: $--color-text-regular;
   font-size: $--font-size-base;
 
   .el-button-group {

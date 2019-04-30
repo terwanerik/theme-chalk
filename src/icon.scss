@@ -8,9 +8,17 @@
   font-style: normal
 }
 
+@font-face {
+  font-family: 'osc-icons';
+  src: url('#{$--font-path}/osc-icons.woff') format('woff'), /* chrome, firefox */
+  url('#{$--font-path}/osc-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  font-weight: normal;
+  font-style: normal
+}
+
 [class^="el-icon-"], [class*=" el-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'element-icons' !important;
+  font-family: 'element-icons', 'osc-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -25,6 +33,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/**
+ * Custom icons
+ */
+ .el-icon-auth:before { content: '\e800'; } /* '' */
+ .el-icon-home:before { content: '\e801'; } /* '' */
+ .el-icon-password:before { content: '\e803'; } /* '' */
+ .el-icon-phone:before { content: '\e804'; } /* '' */
+ .el-icon-search:before { content: '\e805'; } /* '' */
+ .el-icon-user:before { content: '\e806'; } /* '' */
+ .el-icon-telephone:before { content: '\e807'; } /* '' */
+ .el-icon-web:before { content: '\e808'; } /* '' */
+ .el-icon-mail:before { content: '\e809'; } /* '' */
+ .el-icon-mail { transform: scale(0.75, 0.75) translate(-10%, 0);}
+ 
 .el-icon-ice-cream-round:before {
   content: "\e6a0";
 }
